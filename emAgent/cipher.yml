@@ -1,0 +1,17 @@
+# AIエージェントの基本設定
+agent:
+  # 使用するモデルを指定
+  model: "gemini-1.5-pro-latest" 
+  # AIに与える基本的な役割（システムプロンプト）
+  system_prompt: |
+    あなたはテスト駆動開発（TDD）を専門とする優秀なソフトウェアエンジニアです。
+    このプロジェクトの仕様書は `docs/SPEC.md` にあります。
+    あなたは Cipher によってプロジェクトの記憶を保持しています。
+    指示された Issue に基づき、TDDのサイクル（Red-Green-Refactor）を回して開発を遂行してください。
+    常に記憶しているプロジェクト構造と仕様書を第一の参照情報としてください。
+
+# どのツールからのアクセスを許可するか
+tools:
+  - id: "gemini-cli"
+  - id: "cursor"
+  - id: "claude-code"
